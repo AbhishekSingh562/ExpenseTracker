@@ -1,22 +1,3 @@
-// import React, { useState } from "react";
-// import ExpenseDate from "./ExpenseDate";
-// import "./ExpenseItem.css";
-// import Card from "../UI/Card";
-
-// function ExpenseItem(props) {
-//   return (
-//     <Card className="expense-item">
-//       <ExpenseDate date={props.date} />
-//       <div className="expense-item__description">
-//         <h2>{props.title}</h2>
-//         <div className="expense-item__price">&#8377;{props.amount}</div>
-//       </div>
-//     </Card>
-//   );
-// }
-
-// export default ExpenseItem;
-
 import React from "react";
 
 import ExpenseDate from "./ExpenseDate";
@@ -31,6 +12,14 @@ const ExpenseItem = (props) => {
         <div className="expense-item__description">
           <h2>{props.title}</h2>
           <div className="expense-item__price">&#8377;{props.amount}</div>
+          <button
+            className="cancel"
+            onClick={() => {
+              props.onRemove(props.id);
+            }}
+          >
+            X
+          </button>
         </div>
       </Card>
     </li>
